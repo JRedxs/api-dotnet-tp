@@ -12,7 +12,6 @@ namespace RestaurantAPI.Controllers
 
         public CommandController()
         {
-            // Initialisation des commandes (pour l'exemple)
             _commands = new List<Command>
             {
                 new Command { Id = 1, Items = new List<string> { "Entrée", "Plat", "Boisson" }, Status = CommandStatus.Enregistre },
@@ -73,7 +72,6 @@ namespace RestaurantAPI.Controllers
 
             if (status == CommandStatus.Livre)
             {
-                // Vérifie si la commande était déjà livrée avant de marquer comme servie
                 if (command.Status == CommandStatus.Livre)
                     return BadRequest("La commande a déjà été livrée.");
 
